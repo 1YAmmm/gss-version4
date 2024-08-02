@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="mainstyle.css">
+    <link rel="stylesheet" href="gasStatus.css">
+    <link rel="stylesheet" href="slideGas.css">
+    <title>Gas Station Sales Tracker</title>
+</head>
+<body>
+    <h1>Gas Station Sales Tracker</h1>
+    <main>
+        <header>
+            <div class="totalbalance">
+                <h5>Total Income</h5>
+                &#8369;<span id="Totalbalance">0.00</span>
+            </div>
+            <div class="totalpremium">
+                <h5>Premium</h5>
+                &#8369;<span id="Premium">0.00</span>
+            </div>
+            <div class="totaldiesel">
+                <h5>Diesel</h5>
+                &#8369;<span id="Diesel">0.00</span>
+            </div>
+            <div class="totalunleaded">
+                <h5>Unleaded</h5>
+                &#8369;<span id="Unleaded">0.00</span>
+            </div>
+            <div><h6>Current Gas Sales</h6></div>
+            <div class="current-date">
+                <h6>Date: <span id="current-date"></span></h6>
+            </div>
+        </header>
+        <section>
+        <!--gas status-->
+        <h3>Gas Status</h3>
+        <div class="gasStatus">
+            <li>
+                <div class="liter-decrement">
+                    <h5 ><a id="GSPremium">Premium</a></h5>
+                    <h5>Overall Sold: <span id="premium-total-liters-slide" style="color: red;"></span></h5>
+                </div>
+                <span class="gasBar"><span class="premiumBar" id="%premium"></span></span>
+            </li>
+            <li>
+                <div class="liter-decrement">
+                    <h5><a id="GSDiesel">Diesel</a></h5>
+                    <h5>Overall  Sold: <span id="diesel-total-liters-slide" style="color: red;"></span></h5>
+                </div>
+               
+                <span class="gasBar"><span class="dieselBar" id="%diesel"></span></span>
+            </li>
+            <li>
+                <div class="liter-decrement">
+                    <h5><a id="GSUnleaded">Unleaded</a></h5>
+                    <h5>Overall  Sold: <span id="unleaded-total-liters-slide" style="color: red;"></span></h5>
+                </div>
+             
+                <span class="gasBar"><span class="unleadedBar" id="%unleaded"></span></span>
+            </li>
+        </div>
+        </section>
+        <!-- SLIDE TO CALCULATE GAS -->
+        <div class="slideshow-container">
+            <div class="mySlides fade" id="premium-slide">
+                <h2>Premium Gas</h2>
+                <div class="calculator">
+                    <label for="premium-price">Set price (per liter): </label>
+                    <input type="number" id="premium-price" min="0" step="0.01" value="3.50">
+                    <label for="premium-quantity">current quantity (liters): </label>
+                    <input type="number" id="premium-quantity" min="0" >
+                    <label for="premium-previous">previous quantity (liters): </label>
+                    <input type="number" id="premium-previous" min="0">
+                    <button onclick="calculateTotal('premium')">Calculate</button>
+                    <p>Today Liters Sold: <span id="premium-today-litersold">0.00</span></p>
+                    <p>Today Sales: &#8369;<span id="premium-total">0.00</span></p>
+                    <button onclick="saveData('premium')" id="SaveDataBtnPremium">Save</button>
+                </div>
+            </div>
+            <div class="mySlides fade" id="diesel-slide">
+                <h2>Diesel Gas</h2>
+                <div class="calculator">
+                    <label for="diesel-price">Set price (per liter): </label>
+                    <input type="number" id="diesel-price" min="0" step="0.01" value="3.00">
+                    <label for="diesel-quantity">current quantity (liters): </label>
+                    <input type="number" id="diesel-quantity" min="0">
+                    <label for="diesel-previous">previous quantity (liters): </label>
+                    <input type="number" id="diesel-previous" min="0">
+                    <button onclick="calculateTotal('diesel')">Calculate</button>
+              
+                    <p>Today Liters Sold: <span id="diesel-today-litersold">0.00</span></p>
+                    <p>Today Sales: &#8369;<span id="diesel-total">0.00</span></p>
+                    <button onclick="saveData('diesel')" id="SaveDataBtnDiesel">Save</button>
+                </div>
+            </div>
+            <div class="mySlides fade" id="unleaded-slide">
+                <h2>Unleaded Gas</h2>
+                <div class="calculator">
+                    <label for="unleaded-price">Set price (per liter): </label>
+                    <input type="number" id="unleaded-price" min="0" step="0.01" value="2.75">
+                    <label for="unleaded-quantity">current quantity (liters): </label>
+                    <input type="number" id="unleaded-quantity" min="0">
+                    <label for="unleaded-previous">previous quantity (liters): </label>
+                    <input type="number" id="unleaded-previous" min="0">
+                    <button onclick="calculateTotal('unleaded')">Calculate</button>
+                    <p>Today Liters Sold: <span id="unleaded-today-litersold">0.00</span></p>
+                    <p>Today Sales: &#8369;<span id="unleaded-total">0.00</span></p>
+                    <button onclick="saveData('unleaded')" id="SaveDataBtnUnleaded">Save</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </main>
+    <script src="slide.js"></script>
+    <script src="functionCal.js"></script>
+</body>
+</html>

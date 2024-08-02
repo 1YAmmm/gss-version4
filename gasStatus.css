@@ -1,0 +1,73 @@
+*{
+    list-style: none;
+
+}
+.gasStatus li a{
+   text-decoration: none;
+   color: black;
+   cursor: pointer;
+
+}
+.liter-decrement {
+    display: flex;
+   justify-content: space-between;
+}
+.gasStatus{
+    width: 100%;
+    margin: 20px auto;
+ 
+}
+.gasStatus li{
+    margin: 15px 0;
+   
+  
+}
+.gasBar{
+    background:#FFFF99 ;
+    display: block;
+    height: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow:   3px 5px rgba(0,0,0,0.2);
+   
+}
+.gasBar span{
+    height: 30px;
+    float: left;
+    display: flex;
+    justify-content: center;
+   
+}
+.premiumBar{
+    width: 0%;
+    animation: premiumBar 3s;
+    background-color: #FFDB58;
+}
+.dieselBar{
+    width: 0%;
+    animation: dieselBar 3s;
+    background-color:#FFD700;
+}
+.unleadedBar{
+    width: 0%;
+    animation:unleadedBar  3s;
+    background-color:#FFFF00;
+}
+@keyframes premiumBar{
+    0%{
+        width: 0%;
+    }
+   
+}
+@keyframes dieselBar{
+    0%{
+        width: 0%;
+    }
+    
+}
+@keyframes unleadedBar{
+    0%{
+        width: 0%;
+    }
+   
+}

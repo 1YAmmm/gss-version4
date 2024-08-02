@@ -1,0 +1,44 @@
+S:root{
+    --bg-color: white;
+    --text-color: black;
+    --main-color:yellow;
+    --box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+}
+
+div.totalbalance{
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    color: black;
+   background-color:#FFD700;
+}
+div.totalpremium{
+    margin-top: 10px;
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    color: black;
+    background-color:#FFDB58;
+}
+div.totaldiesel{
+    margin-top: 10px;
+    margin-left: px;
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    color: black;
+    background-color:#FFF44F;
+}
+div.totalunleaded{
+    margin-top: 10px;
+    color: black;
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    background-color: #FFFF00;
+     
+}
+div.others{
+    margin-top: 10px;
+    margin-left: px;
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    background-color:#191825;
+     color: aliceblue;
+}
